@@ -20,7 +20,15 @@ function drawPts(){
 }
 drawPts();
 
-
+/*  CURSOR */
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+if(cur){
+  document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';cur2.style.left=e.clientX+'px';cur2.style.top=e.clientY+'px'});
+  document.querySelectorAll('a,button,.tc,.ptag,.pc,.exc').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cur2.style.width='46px';cur2.style.height='46px';cur2.style.borderColor='var(--cyan)'});
+    el.addEventListener('mouseleave',()=>{cur2.style.width='30px';cur2.style.height='30px';cur2.style.borderColor='var(--blue2)'});
+  });
+}
 
 /* NAV  */
 const nb=document.getElementById('navbar');
